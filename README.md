@@ -201,6 +201,15 @@ Orientation: Enumeração que define a orientação do relatório, podendo ser P
 
 - setTitleBorderLeft(Borders titleBorderLeft): Define a borda esquerda dos títulos.
 
+## Exemplo 
+```
+public static void main(String [] args) throws IOException {
+  Report report = new Report().addTitle("Hello World");
+  Util.showReport(report);
+}
+```
+#### Saída
+
 ## Tipos Enums
 
 ### Operation
