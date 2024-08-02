@@ -201,6 +201,69 @@ Orientation: Enumeração que define a orientação do relatório, podendo ser P
 
 - setTitleBorderLeft(Borders titleBorderLeft): Define a borda esquerda dos títulos.
 
+## Tipos Enums
+
+### Operation
+
+A classe Operation é uma enum em Java que define um conjunto de constantes que representam diferentes operações que podem ser realizadas 
+(como NOTHING, AVERAGE, COUNT, HIGHEST, LOWEST, SUM) e seus rótulos (LABEL_AVERAGE, LABEL_COUNT, LABEL_HIGHEST, LABEL_LOWEST, LABEL_SUM). 
+Cada constante pode ter um rótulo associado, que é uma string opcional usada para descrever a operação em termos mais legíveis.
+
+#### Estrutura da Classe
+##### Enums:
+
+- NOTHING, AVERAGE, COUNT, HIGHEST, LOWEST, SUM: Constantes que representam as operações básicas.
+- LABEL_AVERAGE, LABEL_COUNT, LABEL_HIGHEST, LABEL_LOWEST, LABEL_SUM: Constantes que representam as operações com rótulos descritivos.
+Atributos:
+
+- private String label: Uma string que armazena o rótulo associado à operação. Por padrão, é uma string vazia se não for fornecida.
+##### Construtores:
+
+- Operation(): Construtor padrão que define o rótulo como uma string vazia.
+Operation(String label): Construtor que permite a criação de uma constante enum com um rótulo específico.
+##### Métodos:
+
+- public String getLabel(): Retorna o rótulo associado à constante enum.
+- public Operation setLabel(String label): Define um novo rótulo para a constante enum e retorna a própria constante, permitindo o encadeamento de chamadas de métodos.
+
+### Borders
+
+A classe Borders é uma enum em Java que define um conjunto de estilos de borda comumente usados para estilizar elementos visuais, como componentes de interface de usuário. Cada constante enum representa um estilo específico de borda.
+
+#### Estrutura da Classe
+#### Enums:
+- None: Representa a ausência de borda.
+- Solid: Representa uma borda sólida.
+- Dotted: Representa uma borda pontilhada.
+- Dashed: Representa uma borda tracejada.
+- Double: Representa uma borda dupla.
+- Groove: Representa uma borda em estilo de sulco.
+- Inset: Representa uma borda com aparência de reentrância.
+- Outset: Representa uma borda com aparência de saliência.
+- Ridge: Representa uma borda em estilo de crista.
+- RoundDots: Representa uma borda com pontos redondos.
+
+### HAlignment e VAligment
+
+#### HAligment
+A classe HAlignment é uma enum em Java que define as opções de alinhamento horizontal para textos ou elementos em uma interface de usuário. Ela especifica como o conteúdo deve ser posicionado horizontalmente dentro de seu contêiner.
+
+#### Estrutura da Classe
+##### Enums:
+- LEFT: Alinha o conteúdo à esquerda.
+- CENTER: Centraliza o conteúdo horizontalmente.
+- RIGHT: Alinha o conteúdo à direita.
+- JUSTIFIED: Justifica o conteúdo, distribuindo-o uniformemente para alinhar com ambas as margens esquerda e direita.
+- JUSTIFIED_ALL: Justifica todo o conteúdo, incluindo a última linha, de modo que ele se alinha uniformemente com as margens esquerda e direita.
+
+#### VAligment
+A classe VAlignment é uma enum em Java que define as opções de alinhamento vertical para textos ou elementos em uma interface de usuário. Ela especifica como o conteúdo deve ser posicionado verticalmente dentro de seu contêiner.
+
+#### Estrutura da Classe
+##### Enums:
+- TOP: Alinha o conteúdo no topo do contêiner.
+- MIDDLE: Centraliza o conteúdo verticalmente dentro do contêiner.
+- BOTTOM: Alinha o conteúdo na parte inferior do contêiner.
 
 ## Baixando a dependência
 
