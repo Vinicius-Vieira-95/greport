@@ -208,6 +208,259 @@ public static void main(String [] args) throws IOException {
   Util.showReport(report);
 }
 ```
+
+Hello World com cabeçalho
+```
+public static void main(String[] args) throws IOException {
+ Report report = new Report().addTitle("Hello World with Grid");
+        report.addGrid()
+                .addRow().addValue("Hello World");
+        Util.showReport(report);
+}
+
+```
+
+
+```
+public static void main(String [] args) throws IOException {
+ 
+}
+```
+
+Grade 3x3
+```
+public static void main(String [] args) throws IOException {
+ Report report = new Report().addTitle("Grid 3x3");
+        report.addGrid()
+                .addRow()
+                .addValue("Linha <b>1, Coluna 1").addValue("Linha 1,Coluna 2").addValue("Linha 1, Coluna 3")
+                .addRow()
+                .addValue("Linha 2, Coluna 1").addValue("Linha 2,Coluna 2").addValue("Linha 2, Coluna 3")
+                .addRow()
+                .addValue("Linha 3, Coluna 1").addValue("Linha 3,Coluna 2").addValue("Linha 3, Coluna 3");
+        Util.showReport(report);
+}
+```
+
+Grade 3x3 com cabeçalho
+```
+public static void main(String [] args) throws IOException {
+  Report report = new Report().addTitle("Grid 3x3 with Header");
+        report.addGrid()
+                .addColumn("Coluna 1")
+                .addColumn("Coluna 2")
+                .addColumn("Coluna 3")
+                .addRow()
+                .addValue("Linha 1, Coluna 1").addValue("Linha 1,Coluna 2").addValue("Linha 1, Coluna 3")
+                .addRow()
+                .addValue("Linha 2, Coluna 1").addValue("Linha 2,Coluna 2").addValue("Linha 2, Coluna 3")
+                .addRow()
+                .addValue("Linha 3, Coluna 1").addValue("Linha 3,Coluna 2").addValue("Linha 3, Coluna 3");
+        Util.showReport(report);
+}
+```
+
+Grade com alinhamento de texto
+```
+public static void main(String [] args) throws IOException {
+  Report report = new Report().addTitle("Grid 3x3 with Header Align");
+        report.addGrid()
+                .addColumn("Column To Left").sethAlignLeft()
+                .addColumn("Column To Center").sethAlignCenter()
+                .addColumn("Column To Right").sethAlignRight()
+                .addRow()
+                .addValue("Row 1, Column 1").addValue("Row 1,Column 2").addValue("Row 1, Column 3")
+                .addRow()
+                .addValue("Row 2, Column 1").addValue("Row 2,Column 2").addValue("Row 2, Column 3")
+                .addRow()
+                .addValue("Row 3, Column 1").addValue("Row 3,Column 2").addValue("Row 3, Column 3");
+        Util.showReport(report);
+}
+```
+
+Grade com tipo de bordas
+```
+public static void main(String [] args) throws IOException {
+  Report report = new Report().addTitle("Grid Borders");
+        report.addGrid()
+                .addRow().setBorder(Borders.None).addValue().addValue("None").addValue()
+                .addRow().setBorder(Borders.Dashed).addValue().addValue("Dashed").addValue()
+                .addRow().setBorder(Borders.Dotted).addValue().addValue("Dotted").addValue()
+                .addRow().setBorder(Borders.Double).addValue().addValue("Double").addValue()
+                .addRow().setBorder(Borders.Groove).addValue().addValue("Groove").addValue()
+                .addRow().setBorder(Borders.Solid).addValue().addValue("Solid").addValue()
+                .addRow().setBorder(Borders.RoundDots).addValue().addValue("RoundDots").addValue();
+
+        report.addGrid()
+                .addColumn("None").setBorder(Borders.None).sethAlignCenter()
+                .addColumn("Dashed").setBorder(Borders.Dashed).sethAlignCenter()
+                .addColumn("Dotted").setBorder(Borders.Dotted).sethAlignCenter()
+                .addColumn("Double").setBorder(Borders.Double).sethAlignCenter()
+                .addColumn("Groove").setBorder(Borders.Groove).sethAlignCenter()
+                .addColumn("Solid").setBorder(Borders.Solid).sethAlignCenter()
+                .addColumn("RoundDots").setBorder(Borders.RoundDots).sethAlignCenter()
+                .addRow().addValue("None").addValue("Dashed").addValue("Dotted").addValue("Double").addValue("Groove").addValue("Solid").addValue("RoundDots")
+                .addRow().addValue("None").addValue("Dashed").addValue("Dotted").addValue("Double").addValue("Groove").addValue("Solid").addValue("RoundDots")
+                .addRow().addValue("None").addValue("Dashed").addValue("Dotted").addValue("Double").addValue("Groove").addValue("Solid").addValue("RoundDots");
+        Util.showReport(report);
+}
+```
+
+Grade com estilização de cores
+```
+public static void main(String [] args) throws IOException {
+  Report report = new Report().addTitle("Grid 3x3 Com Header Align and BackgroundColor");
+        report.addGrid()
+                .addColumn("Column To Left and Red").sethAlignLeft().setBackgroundColor(Color.RED)
+                .addColumn("Column To Center and Green").sethAlignCenter().setBackgroundColor(Color.GREEN)
+                .addColumn("Column To Right and Blue").sethAlignRight().setBackgroundColor(Color.BLUE)
+                .addRow()
+                .addValue("Row 1, Column 1").addValue("Row 1,Column 2").addValue("Row 1, Column 3")
+                .addRow()
+                .addValue("Row 2, Column 1").addValue("Row 2,Column 2").addValue("Row 2, Column 3")
+                .addRow()
+                .addValue("Row 3, Column 1").addValue("Row 3,Column 2").addValue("Row 3, Column 3");
+        Util.showReport(report);
+}
+```
+
+Estilizando certificado
+```
+public static void main(String [] args) throws IOException {
+   String texto1 = ""
+                + "Certificamos que <b>$NOME</b>"
+                + " participou do Evento de Extensão intitulado <b>‘’$PROJETO’’</b>,"
+                + " realizado de <b>$DATA</b>,"
+                + " com carga horária total de <b>$CH</b>."
+                + "";
+        String texto2 = "Fortaleza, xx de xxxxx de 2024.";
+        String texto3 = "";//Certificado PROEX «N»/2024- CNPJ: 00.000.000/0000-00";
+        String backgroundFileName = Util.getAbsolutePath("certificado.png");
+
+        texto1 = html(texto1.replace("$NOME", "MARCIUS GOMES BRANDAO"));
+        Report report = new Report();
+        report.setFontSize(13)
+                .setPageSize(785f, 555f)
+                .setMargins(0)
+                .setBackgroundFileName(backgroundFileName)
+                .addGrid().addColumn().setBorder(Borders.None)
+                .addRow().setHeight(223f).addValue()
+                .addRow().setHeight(98f).addValue(texto1).escape().sethAlignJustified().setVAlignTop().setPaddings(0, 50, 0, 52)
+                .addRow().setHeight(30f).addValue(texto2).sethAlignRight().setVAlignTop().setPaddings(0, 50, 0, 50)
+                .addRow().setHeight(129f).addValue()
+                .addRow().setHeight(30f).addValue(texto3).sethAlignLeft().setFontBold().setFontSize(12);
+
+        Util.showReport(report);
+}
+```
+
+```
+public static void main(String [] args) {
+  repotSimple();
+}
+
+    private static void reportSimple() throws IOException {
+        List<Product> items = new HelloWorld().products();
+
+        Report report = new Report();
+
+        report.addHeaderGrid()
+                .addRow()
+                .setBorder(Borders.None)
+                .addValue("Report Title")
+                .sethAlign(HAlignment.RIGHT);
+        
+        LayoutGrid grid = report.addGrid()
+                .addColumn("Photo").setOperations(Operation.COUNT)
+                .addColumn("Product").setOperations(LABEL_SUM, LABEL_AVERAGE, LABEL_HIGHEST, LABEL_LOWEST.setLabel("Menor"))
+                .addColumn("Amount").setOperations(SUM, AVERAGE, HIGHEST, LOWEST )
+                .getGrid();
+
+        items.forEach(i -> {
+            grid.addRow()
+                    .addValue(i.getPhoto())
+                    .addValue(i.getName())
+                    .addValue(i.getAmount());
+        });
+
+        Util.showReport(report);
+    }
+
+    public List<Product> products() throws IOException {
+        List<Product> products = new ArrayList<>();
+
+        //for (int i = 1; i < 10; i++) {
+        Product product = new Product();
+        product.setName("AMAROK");
+        product.setAmount(35);
+        product.setPhoto(Util.getResourceAsBytes("amarok.png"));
+        products.add(product);
+
+        product = new Product();
+        product.setName("NOVO POLO GTS");
+        product.setAmount(20);
+        product.setPhoto(Util.getResourceAsBytes("novo-polo.png"));
+        products.add(product);
+
+        product = new Product();
+        product.setName("VIRTUS GTS");
+        product.setAmount(6);
+        product.setPhoto(Util.getResourceAsBytes("virtus.png"));
+        products.add(product);
+        //}
+        return products;
+    }
+
+    public class Product {
+
+        private String name;
+        private Integer amount;
+        private Double price;
+        private Date shelfLife;
+        private byte[] photo;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Integer getAmount() {
+            return amount;
+        }
+
+        public void setAmount(Integer amount) {
+            this.amount = amount;
+        }
+
+        public Double getPrice() {
+            return price;
+        }
+
+        public void setPrice(Double price) {
+            this.price = price;
+        }
+
+        public Date getShelfLife() {
+            return shelfLife;
+        }
+
+        public void setShelfLife(Date shelfLife) {
+            this.shelfLife = shelfLife;
+        }
+
+        public byte[] getPhoto() {
+            return photo;
+        }
+
+        public void setPhoto(byte[] photo) {
+            this.photo = photo;
+        }
+    }
+```
+
 #### Saída
 
 ## Tipos Enums
