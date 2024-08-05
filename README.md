@@ -220,13 +220,6 @@ public static void main(String[] args) throws IOException {
 
 ```
 
-
-```
-public static void main(String [] args) throws IOException {
- 
-}
-```
-
 Grade 3x3
 ```
 public static void main(String [] args) throws IOException {
