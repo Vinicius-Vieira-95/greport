@@ -354,6 +354,7 @@ public static void main(String [] args) throws IOException {
 }
 ```
 
+Relatório com Estilização de imagens
 ```
 public static void main(String [] args) {
   repotSimple();
